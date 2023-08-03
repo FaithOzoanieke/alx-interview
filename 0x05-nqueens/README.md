@@ -1,52 +1,51 @@
-# N Queens
+0x05. N Queens
+Algorithm
+Python
+By: Alexa Orrico, Software Engineer at Holberton School
+Weight: 1
+Project will start Jul 31, 2023 6:00 AM, must end by Aug 4, 2023 6:00 AM
+Checker was released at Aug 1, 2023 6:00 AM
+An auto review will be launched at the deadline
+Requirements
+General
+Allowed editors: vi, vim, emacs
+All your files will be interpreted/compiled on Ubuntu 14.04 LTS using python3 (version 3.4.3)
+All your files should end with a new line
+The first line of all your files should be exactly #!/usr/bin/python3
+A README.md file, at the root of the folder of the project, is mandatory
+Your code should use the PEP 8 style (version 1.7.\*)
+All your files must be executable
 
-Contains methods that find the possible solutions to the n-queens can
-be placed without them attacking each other(The n-queens problem).
+Tasks 0. N queens
+mandatory
 
-## Files
+Chess grandmaster Judit Polgár, the strongest female chess player of all time
 
-### [0-nqueens.py](./0-nqueens.py)
+The N queens puzzle is the challenge of placing N non-attacking queens on an N×N chessboard. Write a program that solves the N queens problem.
 
-Usage: `./0-nqueens.py N`
+Usage: nqueens N
+If the user called the program with the wrong number of arguments, print Usage: nqueens N, followed by a new line, and exit with the status 1
+where N must be an integer greater or equal to 4
+If N is not an integer, print N must be a number, followed by a new line, and exit with the status 1
+If N is smaller than 4, print N must be at least 4, followed by a new line, and exit with the status 1
+The program should print every possible solution to the problem
+One solution per line
+Format: see example
+You don’t have to print the solutions in a specific order
+You are only allowed to import the sys module
+Read: Queen, Backtracking
 
-`N` is the number of queens to place.
-
-Sample Output:
-
-```commandline
-candiepih@ubuntu:~/0x08. N Queens$ ./0-nqueens.py 4
+julien@ubuntu:~/0x08. N Queens$ ./0-nqueens.py 4
 [[0, 1], [1, 3], [2, 0], [3, 2]]
 [[0, 2], [1, 0], [2, 3], [3, 1]]
-candiepih@ubuntu:~/0x08. N Queens$ ./0-nqueens.py 6
+julien@ubuntu:~/0x08. N Queens$ ./0-nqueens.py 6
 [[0, 1], [1, 3], [2, 5], [3, 0], [4, 2], [5, 4]]
 [[0, 2], [1, 5], [2, 1], [3, 4], [4, 0], [5, 3]]
 [[0, 3], [1, 0], [2, 4], [3, 1], [4, 5], [5, 2]]
 [[0, 4], [1, 2], [2, 0], [3, 5], [4, 3], [5, 1]]
-candiepih@ubuntu:~/0x08. N Queens$ 
-```
+julien@ubuntu:~/0x08. N Queens$
+Repo:
 
-
-
-The main file for the project.
-
-**Algorithm**:
-
-1. Start in the leftmost column
-2. If all queens are placed
-    `return true`
-3. Try all rows in the current column.
-    For every row:
-
-   
-    a) If the queen can be placed safely in this row 
-       then mark this [row, column] as part of the 
-       solution and recursively check if placing
-       queen here leads to a solution.
-    b) If placing the queen in [row, column] leads to
-       a solution then return true.
-    c) If placing queen doesn't lead to a solution then
-       unmark this [row, column] (Backtrack) and go to 
-       step (a) to try other rows.
-
-4. If all rows have been tried and nothing worked,
-   return false to trigger backtracking.
+GitHub repository: alx-interview
+Directory: 0x05-nqueens
+File: 0-nqueens.py
